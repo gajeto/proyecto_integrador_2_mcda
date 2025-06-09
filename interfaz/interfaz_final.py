@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import json
+import os
 from pycaret.classification import load_model, predict_model
 import plotly.express as px
 from collections import Counter
@@ -11,12 +12,21 @@ st.set_page_config(page_title="Predicción Médica", page_icon="🩺", layout="w
 st.title("🩺 Sistema de Predicción de Diagnóstico Médico")
 st.markdown("Completa los datos y selecciona los síntomas:")
 
-# Pequeño logo fijo en sidebar
+
+# Obtener el directorio actual del archivo
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Subir un nivel al directorio padre
+parent_dir = os.path.dirname(current_dir)
+
+# Construir el path absoluto a la imagen en ../insumos/logo_hospital.jpg
+logo_path = os.path.join(parent_dir, 'insumos', 'logo_hospital.jpg')
+
 with st.sidebar:
     col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
-        st.image("../insumos/logo_hospital.jpg", width=300)  # replace with your logo path
+        st.image(logo_path, width=300)  # replace with your logo path
         st.markdown("<h1 style='text-align: center;'>Predicción Médica</h1>", unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: gray;'>Proyecto Integrador 2 <br> MCDA <br> EAFIT <br> 2025</h3>", unsafe_allow_html=True)
         st.markdown("<h5 style='text-align: center;'>Especialistas: <br> Juan Pablo Bertel <br> Gustavo Jerez <br> Gustavo Rubio</h1>", unsafe_allow_html=True)
@@ -34,7 +44,8 @@ with st.expander("ℹ️ Información del modelo de predicción de diagnósticos
 # Síntomas en inglés (para alimentar el modelo)
 @st.cache_resource
 def load_symptoms():
-    with open('../insumos/lista_sintomas.txt', 'r') as f:
+    path = os.path.join(parent_dir, 'insumos', 'lista_sintomas.txt')
+    with open(path, 'r') as f:
         symptoms = eval(f.read())
     return symptoms
 
@@ -43,7 +54,8 @@ symptoms_list = load_symptoms()
 # Traducción de síntomas (EN -> ES)
 @st.cache_resource
 def load_symptom_translation():
-    with open('../insumos/sintomas_traducidos.json', 'r') as f:
+    path = os.path.join(parent_dir, 'insumos', 'sintomas_traducidos.json')
+    with open(path, 'r') as f:
         return json.load(f)
 
 symptom_translation = load_symptom_translation()
@@ -52,7 +64,8 @@ symptom_translation_rev = {v: k for k, v in symptom_translation.items()}
 # Traducción de diagnósticos (EN -> ES)
 @st.cache_resource
 def load_diagnosis_translation():
-    with open('../insumos/diagnosticos_traducidos.json', 'r') as f:
+    path = os.path.join(parent_dir, 'insumos', 'diagnosticos_traducidos.json')
+    with open(path, 'r') as f:
         return json.load(f)
 
 diagnosis_translation = load_diagnosis_translation()
@@ -60,7 +73,8 @@ diagnosis_translation = load_diagnosis_translation()
 # Descripciones de diagnósticos
 @st.cache_resource
 def load_descriptions():
-    with open('../insumos/descripcion_diagnosticos_traducidos.json', 'r') as f:
+    path = os.path.join(parent_dir, 'insumos', 'descripcion_diagnosticos_traducidos.json')
+    with open(path, 'r') as f:
         return json.load(f)
 
 diagnosis_descriptions = load_descriptions()
@@ -73,11 +87,11 @@ diagnosis_descriptions = load_descriptions()
 @st.cache_resource
 def load_all_models():
     model_paths = [
-        '../modelos/modelo_lr',
-        '../modelos/modelo_gauss',
-        '../modelos/modelo_xgboost',
-        '../modelos/modelo_knn',
-        '../modelos/modelo_tree'
+        os.path.join(parent_dir, 'modelos', 'modelo_lr'),
+        os.path.join(parent_dir, 'modelos', 'modelo_gauss'),
+        os.path.join(parent_dir, 'modelos', 'modelo_xgboost'),
+        os.path.join(parent_dir, 'modelos', 'modelo_knn'),
+        os.path.join(parent_dir, 'modelos', 'modelo_tree')
         ]
     models = [load_model(path) for path in model_paths]
     return models
