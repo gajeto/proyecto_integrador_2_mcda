@@ -1,0 +1,502 @@
+2025-06-08 19:31:53,099:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:31:53,099:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:31:53,099:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:31:53,099:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:31:53,729:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/fpdf/__init__.py:40: UserWarning: You have both PyFPDF & fpdf2 installed. Both packages cannot be installed at the same time as they share the same module namespace. To only keep fpdf2, run: pip uninstall --yes pypdf && pip install --upgrade fpdf2
+  warnings.warn(
+
+2025-06-08 19:32:52,762:INFO:Initializing load_model()
+2025-06-08 19:32:52,762:INFO:load_model(model_name=modelos/modelo_lr, platform=None, authentication=None, verbose=True)
+2025-06-08 19:32:52,875:INFO:Initializing load_model()
+2025-06-08 19:32:52,875:INFO:load_model(model_name=modelos/modelo_lr, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:12,111:INFO:Initializing load_model()
+2025-06-08 19:33:12,111:INFO:load_model(model_name=../modelos/modelo_lr, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:12,249:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/pycaret/internal/pipeline.py:148: UserWarning: Version mismatch:
+current: {'deps_info': {'pip': '25.1.1', 'setuptools': '49.2.1', 'pycaret': '3.3.2', 'IPython': '8.18.1', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.6.4', 'lightgbm': '4.6.0', 'numba': '0.60.0', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.9.1', 'machine': 'arm64'}}
+pickle: {'deps_info': {'pip': '22.3', 'setuptools': '65.5.0', 'pycaret': '3.3.2', 'IPython': '9.3.0', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.13.0', 'category_encoders': '2.7.0', 'lightgbm': '4.6.0', 'numba': '0.61.2', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': 'Not installed'}, 'python': {'version': '3.11.0', 'machine': 'AMD64'}}
+  warnings.warn(
+
+2025-06-08 19:33:12,250:INFO:Initializing load_model()
+2025-06-08 19:33:12,250:INFO:load_model(model_name=../modelos/modelo_gauss, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:12,259:INFO:Initializing load_model()
+2025-06-08 19:33:12,259:INFO:load_model(model_name=../modelos/modelo_xgboost, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:12,261:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/sklearn/base.py:376: InconsistentVersionWarning: Trying to unpickle estimator LabelEncoder from version 1.2.2 when using version 1.4.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+2025-06-08 19:33:12,262:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/sklearn/base.py:376: InconsistentVersionWarning: Trying to unpickle estimator SimpleImputer from version 1.2.2 when using version 1.4.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+2025-06-08 19:33:13,065:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/xgboost/core.py:158: UserWarning: [19:33:13] WARNING: /Users/runner/work/xgboost/xgboost/src/gbm/../common/error_msg.h:80: If you are loading a serialized model (like pickle in Python, RDS in R) or
+configuration generated by an older version of XGBoost, please export the model by calling
+`Booster.save_model` from that version first, then load it back in current version. See:
+
+    https://xgboost.readthedocs.io/en/stable/tutorials/saving_model.html
+
+for more details about differences between saving model and serializing.
+
+  warnings.warn(smsg, UserWarning)
+
+2025-06-08 19:33:13,143:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/pycaret/internal/pipeline.py:148: UserWarning: Version mismatch:
+current: {'deps_info': {'pip': '25.1.1', 'setuptools': '49.2.1', 'pycaret': '3.3.2', 'IPython': '8.18.1', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.6.4', 'lightgbm': '4.6.0', 'numba': '0.60.0', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.9.1', 'machine': 'arm64'}}
+pickle: {'deps_info': {'pip': '24.1.2', 'setuptools': '75.2.0', 'pycaret': '3.2.0', 'IPython': '7.34.0', 'ipywidgets': '7.7.1', 'tqdm': '4.67.1', 'numpy': '1.25.2', 'pandas': '1.5.3', 'jinja2': '3.1.6', 'scipy': '1.10.1', 'joblib': '1.2.0', 'sklearn': '1.2.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.7.0', 'lightgbm': '4.6.0', 'numba': '0.58.1', 'requests': '2.32.3', 'matplotlib': '3.6.0', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.21.1', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '5.9.5', 'markupsafe': '2.0.1', 'pickle5': 'Not installed', 'cloudpickle': '2.2.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.11.13', 'machine': 'x86_64'}}
+  warnings.warn(
+
+2025-06-08 19:33:13,145:INFO:Initializing load_model()
+2025-06-08 19:33:13,145:INFO:load_model(model_name=../modelos/modelo_knn, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:13,485:INFO:Initializing load_model()
+2025-06-08 19:33:13,486:INFO:load_model(model_name=../modelos/modelo_tree, platform=None, authentication=None, verbose=True)
+2025-06-08 19:33:28,438:INFO:Initializing predict_model()
+2025-06-08 19:33:28,438:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x306f4da00>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model',
+                 LogisticRegression(max_iter=1000, random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x306f63790>)
+2025-06-08 19:33:28,438:INFO:Checking exceptions
+2025-06-08 19:33:28,438:INFO:Preloading libraries
+2025-06-08 19:33:28,442:INFO:Set up data.
+2025-06-08 19:33:28,474:INFO:Set up index.
+2025-06-08 19:33:28,598:INFO:Initializing predict_model()
+2025-06-08 19:33:28,598:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x1070d9d60>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'skin swelling',
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', GaussianNB())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x306f63790>)
+2025-06-08 19:33:28,598:INFO:Checking exceptions
+2025-06-08 19:33:28,598:INFO:Preloading libraries
+2025-06-08 19:33:28,598:INFO:Set up data.
+2025-06-08 19:33:28,639:INFO:Set up index.
+2025-06-08 19:33:28,800:INFO:Initializing predict_model()
+2025-06-08 19:33:28,800:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x16c4e8610>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                               feature_types=None, gamma=None, grow_policy=None,
+                               importance_type=None,
+                               interaction_constraints=None, learning_rate=None,
+                               max_bin=None, max_cat_threshold=None,
+                               max_cat_to_onehot=None, max_delta_step=None,
+                               max_depth=None, max_leaves=None,
+                               min_child_weight=None, missing=nan,
+                               monotone_constraints=None, multi_strategy=None,
+                               n_estimators=None, n_jobs=-1,
+                               num_parallel_tree=None, ...))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x306f63790>)
+2025-06-08 19:33:28,800:INFO:Checking exceptions
+2025-06-08 19:33:28,800:INFO:Preloading libraries
+2025-06-08 19:33:28,800:INFO:Set up data.
+2025-06-08 19:33:28,822:INFO:Set up index.
+2025-06-08 19:33:28,970:INFO:Initializing predict_model()
+2025-06-08 19:33:28,970:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x1070d9d60>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', KNeighborsClassifier(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x306f63790>)
+2025-06-08 19:33:28,970:INFO:Checking exceptions
+2025-06-08 19:33:28,970:INFO:Preloading libraries
+2025-06-08 19:33:28,970:INFO:Set up data.
+2025-06-08 19:33:28,991:INFO:Set up index.
+2025-06-08 19:33:29,507:INFO:Initializing predict_model()
+2025-06-08 19:33:29,507:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x16c4e8610>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', DecisionTreeClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x306f63790>)
+2025-06-08 19:33:29,507:INFO:Checking exceptions
+2025-06-08 19:33:29,508:INFO:Preloading libraries
+2025-06-08 19:33:29,508:INFO:Set up data.
+2025-06-08 19:33:29,530:INFO:Set up index.
+2025-06-08 19:33:29,731:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:167: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:33:29,731:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:168: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,732:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:177: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:33:29,732:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:178: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,732:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:179: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,733:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:180: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,733:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:182: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,733:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:185: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,733:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:187: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:33:29,734:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:188: DeprecationWarning:
+
+"dest" parameter is deprecated since v2.2.0, unused and will soon be removed
+
+
+2025-06-08 19:33:29,734:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:172: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:33:29,734:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_version_final.py:173: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+
+
+2025-06-08 19:56:47,926:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:56:47,926:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:56:47,926:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:56:47,926:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-06-08 19:56:48,518:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/fpdf/__init__.py:40: UserWarning: You have both PyFPDF & fpdf2 installed. Both packages cannot be installed at the same time as they share the same module namespace. To only keep fpdf2, run: pip uninstall --yes pypdf && pip install --upgrade fpdf2
+  warnings.warn(
+
+2025-06-08 19:56:48,685:INFO:Initializing load_model()
+2025-06-08 19:56:48,685:INFO:load_model(model_name=../modelos/modelo_lr, platform=None, authentication=None, verbose=True)
+2025-06-08 19:56:48,784:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/pycaret/internal/pipeline.py:148: UserWarning: Version mismatch:
+current: {'deps_info': {'pip': '25.1.1', 'setuptools': '49.2.1', 'pycaret': '3.3.2', 'IPython': '8.18.1', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.6.4', 'lightgbm': '4.6.0', 'numba': '0.60.0', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.9.1', 'machine': 'arm64'}}
+pickle: {'deps_info': {'pip': '22.3', 'setuptools': '65.5.0', 'pycaret': '3.3.2', 'IPython': '9.3.0', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.13.0', 'category_encoders': '2.7.0', 'lightgbm': '4.6.0', 'numba': '0.61.2', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': 'Not installed'}, 'python': {'version': '3.11.0', 'machine': 'AMD64'}}
+  warnings.warn(
+
+2025-06-08 19:56:48,784:INFO:Initializing load_model()
+2025-06-08 19:56:48,784:INFO:load_model(model_name=../modelos/modelo_gauss, platform=None, authentication=None, verbose=True)
+2025-06-08 19:56:48,791:INFO:Initializing load_model()
+2025-06-08 19:56:48,791:INFO:load_model(model_name=../modelos/modelo_xgboost, platform=None, authentication=None, verbose=True)
+2025-06-08 19:56:48,793:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/sklearn/base.py:376: InconsistentVersionWarning: Trying to unpickle estimator LabelEncoder from version 1.2.2 when using version 1.4.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+2025-06-08 19:56:48,794:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/sklearn/base.py:376: InconsistentVersionWarning: Trying to unpickle estimator SimpleImputer from version 1.2.2 when using version 1.4.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+
+2025-06-08 19:56:49,154:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/xgboost/core.py:158: UserWarning: [19:56:49] WARNING: /Users/runner/work/xgboost/xgboost/src/gbm/../common/error_msg.h:80: If you are loading a serialized model (like pickle in Python, RDS in R) or
+configuration generated by an older version of XGBoost, please export the model by calling
+`Booster.save_model` from that version first, then load it back in current version. See:
+
+    https://xgboost.readthedocs.io/en/stable/tutorials/saving_model.html
+
+for more details about differences between saving model and serializing.
+
+  warnings.warn(smsg, UserWarning)
+
+2025-06-08 19:56:49,242:WARNING:/Users/gajeto/.pyenv/versions/3.9.1/envs/venv_dev_391/lib/python3.9/site-packages/pycaret/internal/pipeline.py:148: UserWarning: Version mismatch:
+current: {'deps_info': {'pip': '25.1.1', 'setuptools': '49.2.1', 'pycaret': '3.3.2', 'IPython': '8.18.1', 'ipywidgets': '8.1.7', 'tqdm': '4.67.1', 'numpy': '1.26.4', 'pandas': '2.1.4', 'jinja2': '3.1.6', 'scipy': '1.11.4', 'joblib': '1.3.2', 'sklearn': '1.4.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.6.4', 'lightgbm': '4.6.0', 'numba': '0.60.0', 'requests': '2.32.3', 'matplotlib': '3.7.5', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.26.0', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '7.0.0', 'markupsafe': '3.0.2', 'pickle5': 'Not installed', 'cloudpickle': '3.1.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.9.1', 'machine': 'arm64'}}
+pickle: {'deps_info': {'pip': '24.1.2', 'setuptools': '75.2.0', 'pycaret': '3.2.0', 'IPython': '7.34.0', 'ipywidgets': '7.7.1', 'tqdm': '4.67.1', 'numpy': '1.25.2', 'pandas': '1.5.3', 'jinja2': '3.1.6', 'scipy': '1.10.1', 'joblib': '1.2.0', 'sklearn': '1.2.2', 'pyod': '2.0.5', 'imblearn': '0.12.4', 'category_encoders': '2.7.0', 'lightgbm': '4.6.0', 'numba': '0.58.1', 'requests': '2.32.3', 'matplotlib': '3.6.0', 'scikitplot': '0.3.7', 'yellowbrick': '1.5', 'plotly': '5.24.1', 'plotly-resampler': 'Not installed', 'kaleido': '0.2.1', 'schemdraw': '0.15', 'statsmodels': '0.14.4', 'sktime': '0.21.1', 'tbats': '1.1.3', 'pmdarima': '2.0.4', 'psutil': '5.9.5', 'markupsafe': '2.0.1', 'pickle5': 'Not installed', 'cloudpickle': '2.2.1', 'deprecation': '2.1.0', 'xxhash': '3.5.0', 'wurlitzer': '3.1.1'}, 'python': {'version': '3.11.13', 'machine': 'x86_64'}}
+  warnings.warn(
+
+2025-06-08 19:56:49,245:INFO:Initializing load_model()
+2025-06-08 19:56:49,245:INFO:load_model(model_name=../modelos/modelo_knn, platform=None, authentication=None, verbose=True)
+2025-06-08 19:56:49,652:INFO:Initializing load_model()
+2025-06-08 19:56:49,652:INFO:load_model(model_name=../modelos/modelo_tree, platform=None, authentication=None, verbose=True)
+2025-06-08 19:57:12,042:INFO:Initializing predict_model()
+2025-06-08 19:57:12,042:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x17f1aff10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model',
+                 LogisticRegression(max_iter=1000, random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x17f02aa60>)
+2025-06-08 19:57:12,042:INFO:Checking exceptions
+2025-06-08 19:57:12,042:INFO:Preloading libraries
+2025-06-08 19:57:12,046:INFO:Set up data.
+2025-06-08 19:57:12,080:INFO:Set up index.
+2025-06-08 19:57:12,213:INFO:Initializing predict_model()
+2025-06-08 19:57:12,213:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x17f1aff10>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'skin swelling',
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', GaussianNB())]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x17f02aa60>)
+2025-06-08 19:57:12,213:INFO:Checking exceptions
+2025-06-08 19:57:12,213:INFO:Preloading libraries
+2025-06-08 19:57:12,213:INFO:Set up data.
+2025-06-08 19:57:12,248:INFO:Set up index.
+2025-06-08 19:57:12,352:INFO:Initializing predict_model()
+2025-06-08 19:57:12,353:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x10466bd00>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                               feature_types=None, gamma=None, grow_policy=None,
+                               importance_type=None,
+                               interaction_constraints=None, learning_rate=None,
+                               max_bin=None, max_cat_threshold=None,
+                               max_cat_to_onehot=None, max_delta_step=None,
+                               max_depth=None, max_leaves=None,
+                               min_child_weight=None, missing=nan,
+                               monotone_constraints=None, multi_strategy=None,
+                               n_estimators=None, n_jobs=-1,
+                               num_parallel_tree=None, ...))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x17f02aa60>)
+2025-06-08 19:57:12,353:INFO:Checking exceptions
+2025-06-08 19:57:12,353:INFO:Preloading libraries
+2025-06-08 19:57:12,353:INFO:Set up data.
+2025-06-08 19:57:12,386:INFO:Set up index.
+2025-06-08 19:57:12,534:INFO:Initializing predict_model()
+2025-06-08 19:57:12,534:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x17c3a90a0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', KNeighborsClassifier(n_jobs=-1))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x17f02aa60>)
+2025-06-08 19:57:12,534:INFO:Checking exceptions
+2025-06-08 19:57:12,534:INFO:Preloading libraries
+2025-06-08 19:57:12,534:INFO:Set up data.
+2025-06-08 19:57:12,553:INFO:Set up index.
+2025-06-08 19:57:13,093:INFO:Initializing predict_model()
+2025-06-08 19:57:13,094:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x17c1eb2b0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['anxiety and nervousness',
+                                             'depression',
+                                             'shortness of breath',
+                                             'depressive or psychotic symptoms',
+                                             'sharp chest pain', 'dizziness',
+                                             'insomnia',
+                                             'abnormal involuntary movements',
+                                             'chest tightness', 'p...
+                                             'retention of urine', 'groin mass',
+                                             'leg pain', 'hip pain',
+                                             'suprapubic pain',
+                                             'blood in stool', 'lack of growth', ...],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('clean_column_names',
+                 TransformerWrapper(transformer=CleanColumnNames())),
+                ('trained_model', DecisionTreeClassifier(random_state=42))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x17f02aa60>)
+2025-06-08 19:57:13,094:INFO:Checking exceptions
+2025-06-08 19:57:13,094:INFO:Preloading libraries
+2025-06-08 19:57:13,094:INFO:Set up data.
+2025-06-08 19:57:13,117:INFO:Set up index.
+2025-06-08 19:57:13,280:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:167: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:57:13,280:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:168: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,280:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:177: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:57:13,281:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:178: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,281:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:179: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,281:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:180: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,281:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:182: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,283:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:185: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,283:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:187: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+
+
+2025-06-08 19:57:13,283:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:188: DeprecationWarning:
+
+"dest" parameter is deprecated since v2.2.0, unused and will soon be removed
+
+
+2025-06-08 19:57:13,283:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:172: DeprecationWarning:
+
+Substituting font arial by core font helvetica - This is deprecated since v2.7.8, and will soon be removed
+
+
+2025-06-08 19:57:13,283:WARNING:/Users/gajeto/Documents/PI_2/proyecto_integrador_2_mcda/interfaz/interfaz_final.py:173: DeprecationWarning:
+
+The parameter "ln" is deprecated since v2.5.2. Instead of ln=0 use new_x=XPos.RIGHT, new_y=YPos.TOP.
+
+

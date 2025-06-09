@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import json
-import pickle
-import gzip
 from pycaret.classification import load_model, predict_model
 import plotly.express as px
 from collections import Counter
@@ -18,7 +16,7 @@ with st.sidebar:
     col1, col2, col3 = st.columns([1,2,1])
 
     with col2:
-        st.image("logo_hospital.jpg", width=300)  # replace with your logo path
+        st.image("../insumos/logo_hospital.jpg", width=300)  # replace with your logo path
         st.markdown("<h1 style='text-align: center;'>Predicción Médica</h1>", unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: gray;'>Proyecto Integrador 2 <br> MCDA <br> EAFIT <br> 2025</h3>", unsafe_allow_html=True)
         st.markdown("<h5 style='text-align: center;'>Especialistas: <br> Juan Pablo Bertel <br> Gustavo Jerez <br> Gustavo Rubio</h1>", unsafe_allow_html=True)
@@ -36,7 +34,7 @@ with st.expander("ℹ️ Información del modelo de predicción de diagnósticos
 # Síntomas en inglés (para alimentar el modelo)
 @st.cache_resource
 def load_symptoms():
-    with open('lista_sintomas.txt', 'r') as f:
+    with open('../insumos/lista_sintomas.txt', 'r') as f:
         symptoms = eval(f.read())
     return symptoms
 
@@ -45,7 +43,7 @@ symptoms_list = load_symptoms()
 # Traducción de síntomas (EN -> ES)
 @st.cache_resource
 def load_symptom_translation():
-    with open('symptom_translation.json', 'r') as f:
+    with open('../insumos/sintomas_traducidos.json', 'r') as f:
         return json.load(f)
 
 symptom_translation = load_symptom_translation()
@@ -54,7 +52,7 @@ symptom_translation_rev = {v: k for k, v in symptom_translation.items()}
 # Traducción de diagnósticos (EN -> ES)
 @st.cache_resource
 def load_diagnosis_translation():
-    with open('diagnosis_translation.json', 'r') as f:
+    with open('../insumos/diagnosticos_traducidos.json', 'r') as f:
         return json.load(f)
 
 diagnosis_translation = load_diagnosis_translation()
@@ -62,7 +60,7 @@ diagnosis_translation = load_diagnosis_translation()
 # Descripciones de diagnósticos
 @st.cache_resource
 def load_descriptions():
-    with open('diagnosis_descriptions_es.json', 'r') as f:
+    with open('../insumos/descripcion_diagnosticos_traducidos.json', 'r') as f:
         return json.load(f)
 
 diagnosis_descriptions = load_descriptions()
@@ -75,41 +73,17 @@ diagnosis_descriptions = load_descriptions()
 @st.cache_resource
 def load_all_models():
     model_paths = [
-        'MODELOS/modelo_lr',
-        'MODELOS/modelo_gauss',
-        'MODELOS/modelo_discr',
-        'MODELOS/modelo_knn',
-        'MODELOS/modelo_tree'
+        '../modelos/modelo_lr',
+        '../modelos/modelo_gauss',
+        '../modelos/modelo_xgboost',
+        '../modelos/modelo_knn',
+        '../modelos/modelo_tree'
         ]
     models = [load_model(path) for path in model_paths]
     return models
 
-#models = load_all_models()
-
-def load_model(path, compression='gzip'):
-    if compression == 'gzip':
-        with gzip.open(path, 'rb') as f:
-            model = pickle.load(f)
-    elif compression == 'lzma':
-        with lzma.open(path, 'rb') as f:
-            model = pickle.load(f)
-    else:
-        raise ValueError("Unsupported compression type")
-    return model
-
-@st.cache_resource
-def cached_load_model(path, compression='gzip'):
-    return load_model(path, compression)
-
-# Cargar modelos
-modelo1 = cached_load_model('MODELOS/modelo_gauss_gz.pkl.gz', compression='gzip')
-modelo2 = cached_load_model('MODELOS/modelo_knn_gz.pkl.gz', compression='gzip')
-modelo3 = cached_load_model('MODELOS/modelo_tree_gz.pkl.gz', compression='gzip')
-modelo4 = cached_load_model('MODELOS/modelo_lr_gz.pkl.gz', compression='gzip')
-#modelo5 = cached_load_model('modelo_xgb_xz.pkl.xz', compression='lzma')
-
-models = [modelo1, modelo2, modelo3, modelo4]
-models_names = ['Gaussiano', 'KNN', 'Árbol', 'Regresión']
+models = load_all_models()
+models_names = ['Regresión', 'Gaussiano', 'XGBoost', 'KNN', 'Árbol',]
 
 # ================================
 # INTERFAZ STREAMLIT
