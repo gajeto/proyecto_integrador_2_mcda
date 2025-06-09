@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 # === Parámetros de ejecución ===
 INPUT_FILE = 'diagnosticos.txt'
-OUTPUT_FILE = 'diagnosis_descriptions.json'
+OUTPUT_FILE = 'descripcion_diagnosticos.json'
 LIMIT_DIAGNOSIS = 400
 SLEEP_TIME = 0.1  # segundos entre requests
 
