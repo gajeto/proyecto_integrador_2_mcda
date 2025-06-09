@@ -1,11 +1,6 @@
 streamlit
 pycaret
-scikit-learn
 pandas
 numpy
-joblib
 plotly
 fpdf2
-deep-translator
-wikipedia-api
-tqdm
