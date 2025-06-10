@@ -3,10 +3,12 @@ import pandas as pd
 import numpy as np
 import json
 import os
+import plotly.graph_objects as go
 from pycaret.classification import load_model, predict_model
 import plotly.express as px
 from collections import Counter
 from fpdf import FPDF
+from streamlit import column_config
 
 # ================================
 # CONFIGURACIÓN DE COLORES
@@ -19,13 +21,12 @@ WARNING_COLOR = "#F2994A"  # Naranja de advertencia
 ERROR_COLOR = "#EB5757"    # Rojo para errores
 BACKGROUND_COLOR = "#F7F9FB"
 
-st.set_page_config(page_title="Predicción Médica", page_icon="🩺", layout="wide")
+st.set_page_config(page_title="Predicción de diagnósticos", page_icon="🩺", layout="wide")
 #st.title("🩺 Sistema de Predicción de Diagnóstico Médico")
 st.markdown(
-    f"<h1 style='color:{PRIMARY_COLOR};'>🩺 Evaluación de Diagnóstico Médico</h1>", 
+    f"<h1 style='color:{PRIMARY_COLOR};'>🩺 Evaluación de diagnóstico médico preliminar de ingreso</h1>", 
     unsafe_allow_html=True
 )
-st.markdown("Completa los datos y selecciona los síntomas:")
 
 
 # ================================
@@ -46,15 +47,22 @@ with st.sidebar:
 
     with col2:
         st.image(logo_path, width=300)  # replace with your logo path
-        st.markdown("<h1 style='text-align: center;'>Predicción Médica</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center;'>Predicción médica</h1>", unsafe_allow_html=True)
         st.markdown("<h3 style='text-align: center; color: gray;'>Proyecto Integrador 2 <br> MCDA <br> EAFIT <br> 2025</h3>", unsafe_allow_html=True)
-        st.markdown("<h5 style='text-align: center;'>Especialistas: <br> Juan Pablo Bertel <br> Gustavo Jerez <br> Gustavo Rubio</h1>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Especialistas: <br> Juan Pablo Bertel <br> Gustavo Jerez <br> Gustavo Rubio</h1>", unsafe_allow_html=True)
 
 
 # Expander para info ampliada
 with st.expander("ℹ️ Información del modelo de predicción de diagnósticos hospitalarios"):
     st.markdown("En una junta médica, la votación de diagnóstico se realiza de manera colegiada, buscando integrar la experiencia y el criterio de los distintos especialistas presentes. Cada miembro expone su análisis del caso basado en la historia clínica, exámenes complementarios y evidencia científica. Posteriormente, se abre un espacio de discusión donde se contrastan los distintos puntos de vista. Una vez finalizada la deliberación, los participantes emiten su voto, que puede ser abierto o anónimo, dependiendo de los protocolos de la institución. El diagnóstico final se establece por consenso si es posible; en caso de desacuerdo, se adopta la decisión de la mayoría, procurando siempre fundamentar el resultado en criterios clínicos objetivos y en beneficio del paciente.")
-    
+    st.markdown("""
+    Esta interfaz simula un escenario de junta médica, donde a partir de la predicción dada por los 5 mejores modelos obtenidos se define un diagnóstico preliminar consensuado, siguiendo las siguientes reglas:
+
+    - ✅ Si hay consenso en **mínimo 3 de los 5 modelos** y estos tienen una **confianza sobre la predicción mayor al 60%**, se define el diagnóstico por **votación**.
+    - 🔍 Si **no hay consenso**, se define el diagnóstico por el modelo con **mayor confianza** en la predicción.
+    """)
+
+
 
 # Síntomas en inglés (para alimentar el modelo)
 @st.cache_resource
@@ -118,6 +126,8 @@ models_names = ['Regresión', 'Gaussiano', 'XGBoost', 'KNN', 'Árbol',]
 # INTERFAZ STREAMLIT
 # ================================
 
+
+st.markdown("##### Completa los datos y selecciona los síntomas:")
 # Formulario de paciente
 with st.form("patient_info"):
     st.header("📝 Datos del paciente")
@@ -159,37 +169,95 @@ if submitted:
             predictions.append(predicted_label)
             confidences.append(predicted_score)
 
-        # Mostrar tabla de resultados
-        st.subheader("📊 Conclusiones de la junta médica:")
-        df_results = pd.DataFrame({
-            'Especialista': [f'{i}' for i in models_names],
-            'Diagnóstico': [diagnosis_translation.get(p, p) for p in predictions],
-            'Confianza': [f"{c*100:.2f}%" for c in confidences],
-            'Confianza_num': confidences
-        })
-        st.dataframe(df_results[['Especialista', 'Diagnóstico', 'Confianza']])
-
-        # Gráfico de barras
-        fig = px.bar(df_results, x='Especialista', y='Confianza_num', color='Diagnóstico',
-                     text='Confianza', labels={'Confianza_num':'Confianza'}, height=400, color_discrete_sequence=px.colors.qualitative.Set2)
-        st.plotly_chart(fig)
+        # Mostrar síntomas seleccionados
+        st.markdown("#### 🩺 De acuerdo con estos síntomas:")
+        for s in selected_symptoms_es:
+            st.markdown(f"- {s}")
 
         # Votación
+        st.markdown("#### 🧑‍⚕️ El diágnostico preliminar para apoyar una decisión clínica:")
+  
         counter = Counter(predictions)
         most_common = counter.most_common(1)[0]
 
+        # Revisar si se cumple la regla 3/5 con confianza > 50%
         if most_common[1] >= 3:
-            final_diagnosis = most_common[0]
-            st.success(f"✅ Diagnóstico final por votación: **{diagnosis_translation.get(final_diagnosis, final_diagnosis)}**")
+            # Índices de modelos que dieron ese diagnóstico
+            same_diag_indices = [i for i, p in enumerate(predictions) if p == most_common[0]]
+            # De esos, revisar cuáles tienen confianza > 0.5
+            high_conf_indices = [i for i in same_diag_indices if confidences[i] > 0.6]
+
+            if len(high_conf_indices) >= 3:
+                final_diagnosis = most_common[0]
+                st.success(f"✅ Por consenso (alta confianza): **{diagnosis_translation.get(final_diagnosis, final_diagnosis)}**")
+            else:
+                # No hay 3 con suficiente confianza
+                idx_max_conf = np.argmax(confidences)
+                final_diagnosis = predictions[idx_max_conf]
+                st.success(f"✅ Por mayor confianza: **{diagnosis_translation.get(final_diagnosis, final_diagnosis)}**")
         else:
+            # No hay al menos 3 coincidencias
             idx_max_conf = np.argmax(confidences)
             final_diagnosis = predictions[idx_max_conf]
-            st.success(f"✅ Diagnóstico final por confianza: **{diagnosis_translation.get(final_diagnosis, final_diagnosis)}**")
+            st.success(f"✅ Por mayor confianza: **{diagnosis_translation.get(final_diagnosis, final_diagnosis)}**")
 
         # Descripción
         description = diagnosis_descriptions.get(final_diagnosis, "Descripción no disponible.")
-        st.info(f"📝 **Descripción:** {description}")
+        st.info(f"📝 **Descripción del diagnóstico:** {description}")
 
+        # Mostrar tabla de resultados con barras visuales y orden
+        st.subheader("📊 Conclusiones de la junta médica:")
+
+        # Armar DataFrame
+        df_results = pd.DataFrame({
+            'Diagnóstico': [diagnosis_translation.get(p, p) for p in predictions],
+            'Especialista': [f'{i}' for i in models_names],
+            'Confianza (%)': [round(c * 100, 0) for c in confidences],
+            'Confianza_num': confidences
+        })
+
+        # Ordenar por confianza
+        df_results = df_results.sort_values(by='Confianza (%)', ascending=False).reset_index(drop=True)
+
+        # Mostrar con barra de progreso visual
+        st.data_editor(
+            df_results[['Especialista', 'Diagnóstico', 'Confianza (%)']],
+            column_config={
+                "Confianza (%)": column_config.ProgressColumn(
+                    "Confianza (%)",
+                    help="Confianza del modelo en su predicción",
+                    format="%.0f",
+                    min_value=0,
+                    max_value=100
+                )
+            },
+            use_container_width=True,
+            disabled=True
+        )
+
+        # Gráfico de barras
+        # Ordenar DataFrame por confianza numérica (descendente)
+        df_results_sorted = df_results.sort_values(by='Confianza_num', ascending=False)
+        # Convertir 'Especialista' a tipo categórico ordenado
+        df_results_sorted['Especialista'] = pd.Categorical(
+            df_results_sorted['Especialista'],
+            categories=df_results_sorted['Especialista'],
+            ordered=True
+        )
+
+        fig = px.bar(df_results_sorted, x='Especialista', y='Confianza_num', color='Diagnóstico',
+                     text='Confianza (%)', labels={'Confianza_num':'Confianza (%)'}, height=400)
+        # Añadir línea horizontal en 50%
+        fig.add_hline(
+            y=0.6,
+            line_dash="dash",
+            line_color="green",
+            annotation_text="Umbral 60%",
+            annotation_position="top right"
+        )
+        st.plotly_chart(fig)
+
+        
         # Exportar PDF
         class PDF(FPDF):
             def header(self):
@@ -207,17 +275,38 @@ if submitted:
         pdf.cell(0, 10, f"Nombre: {patient_name}", ln=True)
         pdf.cell(0, 10, f"ID: {patient_id}", ln=True)
         pdf.cell(0, 10, f"Edad: {patient_age}   Sexo: {patient_sex}", ln=True)
+        pdf.cell(0, 10, f"Nivel de urgencia: {urgencia}", ln=True)
         pdf.ln(5)
-        pdf.cell(0, 10, f"Diagnóstico: {diagnosis_translation.get(final_diagnosis, final_diagnosis)}", ln=True)
+        pdf.cell(0, 10, f"Diagnóstico final: {diagnosis_translation.get(final_diagnosis, final_diagnosis)}", ln=True)
         pdf.multi_cell(0, 10, f"Descripción: {description}")
         pdf.ln(5)
         pdf.cell(0, 10, "Síntomas seleccionados:", ln=True)
         for symptom in selected_symptoms_es:
             pdf.cell(0, 8, f"- {symptom}", ln=True)
+        pdf.ln(5)
+
+        # Incluir tabla de resultados
+        pdf.set_font("Arial", 'B', 12)
+        pdf.cell(0, 10, "Diagnósticos por Especialista:", ln=True)
+        pdf.set_font("Arial", size=12)
+
+        # Encabezado de tabla
+        pdf.set_fill_color(220, 220, 220)
+        pdf.cell(60, 10, "Especialista", border=1, fill=True)
+        pdf.cell(70, 10, "Diagnóstico", border=1, fill=True)
+        pdf.cell(40, 10, "Confianza (%)", border=1, ln=True, fill=True)
+
+        # Filas
+        for i, row in df_results.iterrows():
+            pdf.cell(60, 10, row['Especialista'], border=1)
+            pdf.cell(70, 10, row['Diagnóstico'], border=1)
+            pdf.cell(40, 10, f"{row['Confianza (%)']}%", border=1, ln=True)
+
         pdf_bytes = bytes(pdf.output(dest='S'))
 
+        st.markdown("##### 🧑‍⚕️ Descarga el diagnóstico preliminar en PDF para la historia clínica:")
         st.download_button(
-            label="📥 Descargar PDF para historia clínica",
+            label="📥 Descargar PDF",
             data=pdf_bytes,
             file_name="diagnostico_paciente.pdf",
             mime="application/pdf"
