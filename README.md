@@ -1,5 +1,6 @@
 
-# 🩺 Proyecto Integrador 2 – Maestría de Ciencia de Datos y Analítica - EAFIT - 2025
+# 🩺 Proyecto Integrador 2 
+# Maestría de Ciencia de Datos y Analítica - EAFIT - 2025
 
 Este repositorio contiene una aplicación interactiva desarrollada con **Streamlit** y basada en un pipeline de modelación de **PyCaret**, cuyo objetivo es simular una **junta médica** automatizada que, a partir de los síntomas ingresados por un paciente, define un diagnóstico preliminar por consenso entre los cinco mejores modelos de machine learning entrenados sobre el dataset principal.
 
@@ -41,6 +42,6 @@ proyecto_integrador_2_mcda/
 - [Googletrans](https://py-googletrans.readthedocs.io/) para traducción automática.
 
 
-## 📄 Equipo
+## 📄 Equipo de desarrollo
 
-Este proyecto fue desarrollado por: Juan Pablo Bertel Morales - Gustavo Andrés Rubio Castillo - Gustavo Adolfo Jerez Tous 
+### Juan Pablo Bertel Morales - Gustavo Andrés Rubio Castillo - Gustavo Adolfo Jerez Tous 
